@@ -1,0 +1,43 @@
+﻿@page
+@model WEBMandiri.pages.UserViewModel
+ 
+<h2>User List</h2>
+<table class="table">
+    <tr>
+
+        <th>Nama</th>
+        <th>Pekerjaan</th>
+        <th>Domisili</th>
+        <th>Actions</th>
+    </tr>
+    @if (Model.Users == null)
+    {
+        <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        </tr>
+    }else{
+    @foreach (var users in Model.Users)
+    {
+        <tr>
+            <td>@users.Nama</td>
+            <td>@users.Pekerjaan</td>
+            <td>@users.Domisili</td>
+            <td>
+                <button onclick="editdata(@users.Id)">Edit</button>
+                <form method="post" asp-page-handler="Delete" asp-route-id="@users.Id">
+                    <button type="submit">Delete</button>
+                </form>
+            </td>
+        </tr>
+    } }
+</table>
+<a href="/Create">Create New User</a>
+
+<script>
+    function editdata(id) {
+        window.location.href = '/Edit?id=' + id; // Ganti dengan URL pengeditan yang sesuai
+    }
+</script>

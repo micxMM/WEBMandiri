@@ -1,0 +1,25 @@
+﻿@page
+@model WEBMandiri.pages.EditModel
+
+<h2>Edit User</h2>
+
+<form method="post">
+    <div>
+        <label>Nama:</label>
+        <input type="text" asp-for="User.Nama" />
+    </div>
+    <div>
+        <label>Umur:</label>
+        <input type="number" asp-for="User.Umur" />
+    </div>
+    <div>
+        <label>Pekerjaan:</label>
+        <input type="text" asp-for="User.Pekerjaan" />
+    </div>
+    <div>
+        <label>Domisili:</label>
+        <input type="text" asp-for="User.Domisili" />
+    </div>
+    <input type="hidden" asp-for="User.Id" />
+    <button type="submit">Update</button>
+</form>

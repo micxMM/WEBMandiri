@@ -1,0 +1,25 @@
+﻿@page
+@model WEBMandiri.pages.CreateModel
+
+<h2>Create User</h2>
+
+<form method="post">
+    <div>
+        <label>Nama:</label>
+        <input type="text" asp-for="User.Nama" required />
+    </div>
+    <div>
+        <label>Umur:</label>
+        <input type="number" asp-for="User.Umur" />
+    </div>
+    <div>
+        <label>Pekerjaan:</label>
+        <input type="text" asp-for="User.Pekerjaan" required />
+    </div>
+    <div>
+        <label>Domisili:</label>
+        <input type="text" asp-for="User.Domisili" required />
+    </div>
+    <button type="submit">Create</button>
+</form>
+<a href="/Index">Back to User List</a>
